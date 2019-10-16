@@ -4,10 +4,14 @@
         import  SearchBox  from './components/SearchBox/SearchBox';
 
         class App extends Component{
-          state={
-                     monsters:[],
-                     searchField:''
-          }
+                constructor(){
+                  super()
+                  this.state={
+                    monsters:[],
+                    searchField:''
+                  }
+                }
+          
 
           handleChange= e=>{
             this.setState({searchField:e.target.value})
@@ -17,6 +21,7 @@
                   .then(response=>response.json())
                   .then(users=>this.setState({monsters:users}))
           }
+        
           render(){
                   const {monsters, searchField} = this.state;
                   const filteredMonsters = monsters.filter(monster=>{
@@ -32,8 +37,6 @@
                          />
                          <CardList   monsters ={filteredMonsters} />
                       </div>
-                  
-
           );
         }
         }
