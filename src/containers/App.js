@@ -20,13 +20,14 @@ class App extends Component {
       .then(response => response.json())
       .then(users => this.setState({ monsters: users }));
   }
-  render() {
-    const { monsters, searchField } = this.state;
-    const filteredMonsters = monsters.filter(monster => {
+  filteredMonsters = () => {
+    return this.state.monsters.filter(monster => {
       return monster.name
         .toLowerCase()
-        .includes(searchField.toLocaleLowerCase());
+        .includes(this.state.searchField.toLocaleLowerCase());
     });
+  };
+  render() {
     return (
       <div className="App">
         <h1>Monsters Rolodex</h1>
@@ -34,7 +35,7 @@ class App extends Component {
           placeholder="search monsters"
           handleChange={this.handleChange}
         />
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={this.filteredMonsters()} />
       </div>
     );
   }
