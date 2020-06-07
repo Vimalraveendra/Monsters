@@ -9,18 +9,18 @@ class App extends Component {
     super();
     this.state = {
       monsters: [],
-      searchField: ""
+      searchField: "",
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ searchField: e.target.value });
   };
 
-  fetchCall = () => {
+  fetchCall = (fetch) => {
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(users => this.setState({ monsters: users }));
+      .then((response) => response.json())
+      .then((users) => this.setState({ monsters: users }));
   };
 
   render() {
