@@ -2,19 +2,19 @@ version: 2.1
 jobs:
   bobby:
     docker:
-      - image: circleci/node:10.16.3 # the primary container, where your job's commands are run
+        - image: circleci/node:10.16.3 # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
-        sally:
-    docker:
-      - image: circleci/node:10.16.3 # the primary container, where your job's commands are run
+       - checkout # check out the code in the project directory
+       - run: echo "hello world" # run the `echo` command
+    sally:
+     docker:
+       - image: circleci/node:10.16.3 # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "double trouble" # run the `echo` command
-      workflows:
-         version: 2.1
-         bobby_sally:
-            jobs:
-                 - bobby
-                 - sally
+       - checkout # check out the code in the project directory
+       - run: echo "double trouble" # run the `echo` command
+workflows:
+  version: 2.1
+    bobby_sally:
+      jobs:
+         - bobby
+         - sally
