@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   bobby:
     docker:
@@ -13,7 +13,7 @@ sally:
     - checkout # check out the code in the project directory
     - run: echo "double trouble" # run the `echo` command
 workflows:
-  version: 2.1
+  version: 2
   bobby_sally:
     jobs:
       - bobby
