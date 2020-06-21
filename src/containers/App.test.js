@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import React from "react";
 import App from "./App";
-import fetchMock from "fetch-mock";
+// import fetchMock from "fetch-mock";
 
 let wrapper;
 beforeEach(() => {
@@ -16,34 +16,34 @@ describe("handleChange", () => {
   it("should handle the change and setstate after recieving the input", () => {
     const mockProps = {
       target: {
-        value: "hel"
-      }
+        value: "hel",
+      },
     };
 
     const expectedAction = {
       monsters: [],
-      searchField: "hel"
+      searchField: "hel",
     };
     wrapper.instance().handleChange(mockProps);
     expect(wrapper.state()).toEqual(expectedAction);
   });
 });
-describe("fetchAPI", () => {
-  it("should call fetchApi to get the monsters", async () => {
-    const mockProps = {
-      monsters: [
-        {
-          id: 123,
-          name: "hello",
-          email: "hello@gmail.com"
-        }
-      ]
-    };
+// describe("fetchAPI", () => {
+//   it("should call fetchApi to get the monsters", async () => {
+//     const mockProps = {
+//       monsters: [
+//         {
+//           id: 123,
+//           name: "hello",
+//           email: "hello@gmail.com"
+//         }
+//       ]
+//     };
 
-    fetchMock
-      .getOnce("https://jsonplaceholder.typicode.com/users", mockProps)
-      .then(() => {
-        expect(wrapper.state()).toEqual("hello");
-      });
-  });
-});
+//     fetchMock
+//       .getOnce("https://jsonplaceholder.typicode.com/users", mockProps)
+//       .then(() => {
+//         expect(wrapper.state()).toEqual("hello");
+//       });
+//   });
+// });
