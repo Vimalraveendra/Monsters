@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  bobby:
+  build:
     docker:
       - image: circleci/node:10.16.3 # the primary container, where your job's commands are run
     steps:
