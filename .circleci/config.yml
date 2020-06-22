@@ -17,11 +17,6 @@ jobs:
       - run: echo "testing stuff"
       - run: yarn install
       - run: yarn test
-      - run:
-          name: "Run Jest and Collect Coverage Reports"
-          command: jest --collectCoverage=true
-      - store_artifacts:
-          path: coverage
 
   hithere:
     docker:
