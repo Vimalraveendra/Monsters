@@ -1,6 +1,9 @@
 import { shallow } from "enzyme";
 import React from "react";
 import App from "./App";
+
+import fetchMock from "fetch-mock";
+
 // import fetchMock from "fetch-mock";
 
 let wrapper;
@@ -28,6 +31,27 @@ describe("handleChange", () => {
     expect(wrapper.state()).toEqual(expectedAction);
   });
 });
+
+// describe("fetchAPI", () => {
+//   it("should call fetchApi to get the monsters", async () => {
+//     const mockProps = {
+//       monsters: [
+//         {
+//           id: 123,
+//           name: "hello",
+//           email: "hello@gmail.com",
+//         },
+//       ],
+//     };
+
+//     fetchMock
+//       .getOnce("https://jsonplaceholder.typicode.com/users", mockProps)
+//       .then(() => {
+//         expect(wrapper.state()).toEqual("hello");
+//       });
+//   });
+// });
+
 // describe("fetchAPI", () => {
 //   it("should call fetchApi to get the monsters", async () => {
 //     const mockProps = {
