@@ -5,7 +5,7 @@ import SearchBox from "../SearchBox/SearchBox";
 
 class MainPage extends Component {
   componentDidMount() {
-    this.props.fetchCall();
+    this.props.fetchCall(fetch);
   }
   filteredMonsters = () => {
     return this.props.monsters.filter(monster => {
