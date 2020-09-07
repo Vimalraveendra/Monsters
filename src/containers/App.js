@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   fetchCall = (fetch) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    return fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => this.setState({ monsters: users }));
   };
